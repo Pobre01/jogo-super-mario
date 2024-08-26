@@ -11,5 +11,28 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    backgroud: linear-gradient(#87ceeb,#e0f6ff)
+    backgronud: linear-gradient(#87ceeb,#e0f6ff)
 )
+
+.pipe {
+     position: absolute;
+     bottom: 0;
+     width: 80px;
+     animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.nuvem {
+    position: absute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
