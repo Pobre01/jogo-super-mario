@@ -4,15 +4,15 @@
     box-sizing:border-box;
 }
 
-.game-board (
+.game-board {
     width: 100%;
     height: 500px;
     border-bottom: 15px solid green; 
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    backgronud: linear-gradient(#87ceeb,#e0f6ff)
-)
+    background: linear-gradient(#87ceeb,#e0f6ff)
+}
 
 .pipe {
      position: absolute;
@@ -47,8 +47,8 @@
 }
 
 @keyframes jump {
-    0%
-     b0ttom: 0;
+    0%{
+     bottom: 0;
 }
 
  40%{
@@ -65,7 +65,7 @@
 
 100% {
     bottom: 0;
- }
+}
 }
 
 @keyframes clouds-animation {
