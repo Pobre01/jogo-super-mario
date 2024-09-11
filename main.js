@@ -3,6 +3,8 @@ const pipe = ducument.querySelector(".pipe");
 const starButton = document.querySelector(".start");
 const gameOverScreen = document.querySelector(".game-over");
 
+audiostar = new audio("./sound/audio_theme.mp");
+const gameOversoud =new audio("./soud/audio_gameover.mp3");
 let gameStarted = false;
 
 const startGame = () => {
@@ -15,6 +17,7 @@ gameStarted = true;
     clouds.style.opacity = "1";
 
 const jump = () => {
+    if(gamestarted) {
     mario.classList.add('jump');
 
     setInterval(() => {
