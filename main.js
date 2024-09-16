@@ -1,79 +1,59 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const nuvem = document.querySelector(".nuvem");
-const startButton = document.querySeeetor(".start");
-const gameOverScreen = document.querySelector(".game=over");
+const startButton = document.querySelector(".start");
+const gameOverScreen = document.querySelector(".game-over");
 
-audioStart = new Audio("./sound/audio_theme.mp3);
-const gameOverSound = new Audio("./sound/audio_gameover.mp3);
+audioStart = new Audio("./sound/audio_theme.mp3");
+const gameOverSound = new Audio("./sound/audio_gameover.mp3");
 
 let gameStarted = false;
 
-const startGame => {
-gameStarded = true;
-audioStart.play();
-pipe.style.animation = "pipe-animation 1.5s infinite linear";
+const startGame = () => {
+  gameStarted = true;
+  audioStart.play();
+  
+  pipe.style.animation = "pipe-animation 1.5s infinite linear";
 
-    startButton.style.display = "none";
-    mario.style.opacity = "1";
-    pipe.style.opacity = "1";
-    clouds.style.opacity = "1";
+  startButton.style.display = "none";
+  mario.style.opacity = "1";
+  pipe.style.opacity = "1";
+  clouds.style.opacity = "1";
 
 }
 
-
 const jump = () => {
-    if(gameStarded){
-    mario.classList.add("jump");
-        
-    setTimeout (() => {
-        mario.classList.remove("jump");
-    }
-    ,500 );
-    }
+  if(gameStarted) {
+  mario.classList.add("jump");
 
-    const loop = setInterval (() => {
-     const pipePosition = pipe.offsetLeft;
-     const marioPosition = window.getComputedStyle(mario).bottom.replace("px","");
+  setTimeout(() => {
+    mario.classList.remove("jump");
+  }
+  ,500);
+}
+}
 
-     if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-        pipe.style.animation = "none";
-        pipe.style.left = `${pipePosition}px`;
+const loop = setInterval (() => {
+const pipePosition = pipe.offsetLeft;
+const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
 
-        mario.animation = "none";
-        mario.style.left = `${mario.Position}px`;
+  if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+    pipe.style.animation = "none";
+    pipe.style.left = `${pipePosition}px`;
 
-        mario.src = "./img/game-over.png";
-        mario.style.width = "75px";
-        mario.style.marginLeft = "50px";
-        audioStart.pause();
+    mario.style.animation = "none";
+    mario.style.left = `${marioPosition}px`;
 
-        gameOverSound.play();
+    mario.src = "./img/game-over.png";
+    mario.style.width = "75px";
+    mario.style.marginLeft = "50px";
+    audioStart.pause();
 
-    
+    gameOverSound.play();
 
-     clearInterval(loop);
-      
-    },10);
+    clearInterval(loop);
+    gameOverScreen.style.display = "flex";
+  }    
+},10);
 
-    document.addEventListener("keydown", jump);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener('keydown', jump);
-
+document.addEventListener("keydown", jump);
