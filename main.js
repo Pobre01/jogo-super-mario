@@ -1,52 +1,62 @@
 const mario = document.querySelector(".mario");
-const pipe = ducument.querySelector(".pipe");
-const starButton = document.querySelector(".start");
-const gameOverScreen = document.querySelector(".game-over");
+const pipe = document.querySelector(".pipe");
+const nuvem = document.querySelector(".nuvem");
+const startButton = document.querySeeetor(".start");
+const gameOverScreen = document.querySelector(".game=over");
 
-audiostar = new audio("./sound/audio_theme.mp");
-const gameOversoud =new audio("./soud/audio_gameover.mp3");
+audioStart = new Audio("./sound/audio_theme.mp3);
+const gameOverSound = new Audio("./sound/audio_gameover.mp3);
+
 let gameStarted = false;
 
-const startGame = () => {
-gameStarted = true;
-    pipe.style.animation = "pipe- animation 1.5s infinite linear;
+const startGame => {
+gameStarded = true;
+audioStart.play();
+pipe.style.animation = "pipe-animation 1.5s infinite linear";
 
-    startbutton.style.display  = "none";
+    startButton.style.display = "none";
     mario.style.opacity = "1";
     pipe.style.opacity = "1";
     clouds.style.opacity = "1";
 
-const jump = () => {
-    if(gamestarted) {
-    mario.classList.add('jump');
-
-    setInterval(() => {
-        mario.classList.remove("jump");
-    }
-,500 );
 }
 
-const loop = setInterval(() => {
-    const pipePosition =  pipe.offsetLeft;
-    const marioPosition = +window.getComputedStyle(mario).bottom.replace("px","");
 
-    if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-        pipe.animation = "none";
+const jump = () => {
+    if(gameStarded){
+    mario.classList.add("jump");
+        
+    setTimeout (() => {
+        mario.classList.remove("jump");
+    }
+    ,500 );
+    }
+
+    const loop = setInterval (() => {
+     const pipePosition = pipe.offsetLeft;
+     const marioPosition = window.getComputedStyle(mario).bottom.replace("px","");
+
+     if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+        pipe.style.animation = "none";
         pipe.style.left = `${pipePosition}px`;
 
         mario.animation = "none";
-        mario.style.left = `${marioPosition}px`;
-    
-        mario.src = "/img/game-over.png";
+        mario.style.left = `${mario.Position}px`;
+
+        mario.src = "./img/game-over.png";
         mario.style.width = "75px";
-        mario.style.marionLeft = "50px";
+        mario.style.marginLeft = "50px";
+        audioStart.pause();
 
-        clearInterval(loop);
+        gameOverSound.play();
 
-},10);
+    
 
-document.addEventListener("keydown", jump);
+     clearInterval(loop);
+      
+    },10);
 
+    document.addEventListener("keydown", jump);
 
 
 
