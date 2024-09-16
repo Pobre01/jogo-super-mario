@@ -1,4 +1,4 @@
-<div><br class="Apple-interchange-newline">* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -121,4 +121,4 @@ game-over h1 {
     to {
         right: 100%;
     }
-}</div>
+}
