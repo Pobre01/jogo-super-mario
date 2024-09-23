@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@
  position: absolute;
  bottom: 0;
  width: 80px;
- animation: pipe-animation 1.5s infinite linear;
 }
 
 .mario {
@@ -67,10 +65,10 @@ button.start {
 display: block;
 }
 
-.score {
+.score { 
     position: absolute;
     top: 10px;
-    right: 10 10px;
+    right: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 24px;
@@ -87,7 +85,7 @@ display: block;
 .game-over {
     width: 100%;
     height: 100vh;
-    background:rgba(0, 0, 0, 0, 0.2);
+    background:rgba(0, 0, 0, 0.2);
     display: none;
     align-items: center;
     justify-content: center;
